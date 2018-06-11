@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @institute.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @institute.description %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @institute.active %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @institute.status %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @institute.location %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @institute.location_id %>
+</p>
+
+<p>
+  <strong>Is demo:</strong>
+  <%= @institute.is_demo %>
+</p>
+
+<br/>
+
+<h3>Courses</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Institute</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institute.courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.active %></td>
+        <td><%= course.institute.name %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Edit', edit_institute_path(@institute) %> |
+<%= link_to 'Back', institutes_path %>

@@ -1,0 +1,52 @@
+<%= form_with(model: institute, local: true) do |form| %>
+  <% if institute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(institute.errors.count, "error") %> prohibited this institute from being saved:</h2>
+
+      <ul>
+      <% institute.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.text_field :active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+<!--   <div class="field">
+    <%#= form.label :location_id %>
+    <%#= form.number_field :location_id %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :is_demo %>
+    <%= form.check_box :is_demo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

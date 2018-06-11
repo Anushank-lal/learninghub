@@ -6,8 +6,10 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  * 2.4.1
 
 * System dependencies
+  * Ubuntu/linux, mac
 
 * Configuration
 
